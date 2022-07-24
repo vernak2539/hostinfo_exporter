@@ -15,4 +15,4 @@ build_pi_4:
 
 .PHONY: build_pi_zero
 build_pi_zero:
-	env GOOS=linux GOARM=7 GOARCH=arm go build -o build/hostinfo_exporter-linux-arm7 ./cmd/main.go
+	env GOOS=linux GOARM=7 GOARCH=arm go build -o build/hostinfo_exporter-linux-armv7 ./cmd/main.go
