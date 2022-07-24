@@ -11,4 +11,10 @@ jobs:
       - run: make build_all
       - uses: actions/upload-artifact@v3
         with:
-          path: build/**
+          path: build/hostinfo_exporter-darwin-arm46
+      - uses: actions/upload-artifact@v3
+        with:
+          path: build/hostinfo_exporter-linux-arm64
+      - uses: actions/upload-artifact@v3
+        with:
+          path: build/hostinfo_exporter-linux-armv7
