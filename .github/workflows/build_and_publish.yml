@@ -8,6 +8,7 @@ jobs:
       - uses: rymndhng/release-on-push-action@master
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          ACTIONS_STEP_DEBUG: true
         with:
           bump_version_scheme: patch
       - uses: actions/setup-go@v3
