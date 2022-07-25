@@ -3,8 +3,8 @@ on: [push]
 jobs:
   build_and_publish:
     runs-on: ubuntu-latest
-    env:
-      GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+#    env:
+#      GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
     steps:
       - uses: actions/checkout@v2
       - uses: rymndhng/release-on-push-action@master
@@ -28,7 +28,7 @@ jobs:
           path: build/hostinfo_exporter-linux-armv7
       - name: Upload release binaries
         uses: alexellis/upload-assets@0.2.2
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
         with:
           asset_paths: '["./build/hostinfo_exporter*"]'
-#        env:
-##          GITHUB_TOKEN: ${{ github.token }}
