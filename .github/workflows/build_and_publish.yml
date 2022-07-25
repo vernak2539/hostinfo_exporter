@@ -22,6 +22,7 @@ jobs:
         with:
           repo_token: ${{ secrets.GITHUB_TOKEN }}
           file: build/**
+          file_glob: true
           tag: ${{ steps.get-latest-tag.outputs.tag }}
           overwrite: false
 #      - uses: actions/upload-artifact@v3
