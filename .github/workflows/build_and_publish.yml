@@ -16,7 +16,6 @@ jobs:
       - name: Get Latest Release Tag
         uses: actions-ecosystem/action-get-latest-tag@v1
         id: get-latest-tag
-        if: ${{ steps.release-label.outputs.level != null }}
       - run: make build_all VERSION=${{ steps.get-latest-tag.outputs.tag }}
 #      - uses: actions/upload-artifact@v3
 #        with:
