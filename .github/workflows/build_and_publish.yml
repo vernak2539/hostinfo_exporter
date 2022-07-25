@@ -3,11 +3,11 @@ on: [push]
 jobs:
   build_and_publish:
     runs-on: ubuntu-latest
-#    env:
-#      GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
     steps:
       - uses: actions/checkout@v2
       - uses: rymndhng/release-on-push-action@master
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
           bump_version_scheme: patch
       - uses: actions/setup-go@v3
