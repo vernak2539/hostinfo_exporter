@@ -14,22 +14,22 @@ jobs:
         with:
           go-version: '1.17.6'
       - run: make build_all
-      - uses: actions/upload-artifact@v3
-        with:
-          name: hostinfo_exporter-darwin-arm46
-          path: build/hostinfo_exporter-darwin-arm46
-      - uses: actions/upload-artifact@v3
-        with:
-          name: hostinfo_exporter-linux-arm64
-          path: build/hostinfo_exporter-linux-arm64
-      - uses: actions/upload-artifact@v3
-        with:
-          name: hostinfo_exporter-linux-armv7
-          path: build/hostinfo_exporter-linux-armv7
+#      - uses: actions/upload-artifact@v3
+#        with:
+#          name: hostinfo_exporter-darwin-arm46
+#          path: build/hostinfo_exporter-darwin-arm46
+#      - uses: actions/upload-artifact@v3
+#        with:
+#          name: hostinfo_exporter-linux-arm64
+#          path: build/hostinfo_exporter-linux-arm64
+#      - uses: actions/upload-artifact@v3
+#        with:
+#          name: hostinfo_exporter-linux-armv7
+#          path: build/hostinfo_exporter-linux-armv7
       - name: Upload release binaries
         uses: alexellis/upload-assets@0.2.2
         env:
-          GITHUB_TOKEN: ${{ github.token }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           ACTIONS_STEP_DEBUG: true
         with:
           asset_paths: '["./build/hostinfo_exporter*"]'
